@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.saefulrdevs.esensus.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/informationFragment"
+        android:name="com.saefulrdevs.esensus.ui.information.InformationFragment"
+        android:label="Information"
+        tools:layout="@layout/fragment_information" />
+
+    <fragment
+        android:id="@+id/inputFragment"
+        android:name="com.saefulrdevs.esensus.ui.form.InputFormFragment"
+        android:label="Input"
+        tools:layout="@layout/fragment_input_form" />
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.saefulrdevs.esensus.ui.datalist.DataListFragment"
+        android:label="List"
+        tools:layout="@layout/fragment_data_list">
+        <action
+            android:id="@+id/action_dataListFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <argument
+            android:name="citizens"
+            app:argType="com.saefulrdevs.esensus.data.model.Citizens"
+            app:nullable="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.saefulrdevs.esensus.ui.detail.DetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_detail" />
+
+</navigation>
