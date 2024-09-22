@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.saefulrdevs.esensus.R
 import com.saefulrdevs.esensus.databinding.FragmentDashboardBinding
 
@@ -38,7 +39,16 @@ class DashboardFragment : Fragment() {
         }
 
         binding.cardExit.setOnClickListener {
-//            finish()
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Exit")
+                .setMessage("Apakah yakin ingin keluar dari aplikasi?")
+                .setNegativeButton("Cancel") { dialog, which ->
+                    dialog.dismiss()
+                }
+                .setPositiveButton("Exit") { dialog, which ->
+                    requireActivity().finish()
+                }
+                .show()
         }
         return binding.root
     }

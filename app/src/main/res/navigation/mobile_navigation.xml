@@ -43,4 +43,10 @@
         android:label="Detail"
         tools:layout="@layout/fragment_detail" />
 
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.saefulrdevs.esensus.ui.maps.MapsFragment"
+        android:label="Maps"
+        tools:layout="@layout/fragment_maps" />
+
 </navigation>

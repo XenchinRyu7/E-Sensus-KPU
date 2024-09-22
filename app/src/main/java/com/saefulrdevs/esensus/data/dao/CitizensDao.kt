@@ -26,4 +26,7 @@ interface CitizensDao {
 
     @Query("SELECT * FROM citizens WHERE nik = :nik")
     suspend fun getCitizenById(nik: String): Citizens
+
+    @Query("SELECT * FROM citizens WHERE nik LIKE :query OR name LIKE :query")
+    fun searchCitizens(query: String): LiveData<List<Citizens>>
 }

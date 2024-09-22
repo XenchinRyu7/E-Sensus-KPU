@@ -23,8 +23,10 @@ class CitizensAdapter : RecyclerView.Adapter<CitizensAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val citizens = citizensList[position]
         holder.binding.apply {
-            nikTv.append(citizens.nik)
-            fullNameTv.append(citizens.name)
+            val nik = "NIK: ${citizens.nik}"
+            val fullName = "Nama: ${citizens.name}"
+            nikTv.text = nik
+            fullNameTv.text = fullName
         }
         holder.itemView.setOnClickListener {
             val bundle = Bundle().apply {

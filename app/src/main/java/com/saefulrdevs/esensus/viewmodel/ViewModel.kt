@@ -39,12 +39,16 @@ class ViewModel @Inject constructor(
         }
     }
 
-    fun getCitizenById(nik: String, callback: (Citizens?) -> Unit) {
+    fun deleteCitizen(citizen: Citizens, onResult: (Boolean) -> Unit) {
         viewModelScope.launch {
-            val citizen = withContext(Dispatchers.Main) {
-                repository.getCitizenById(nik)
+            val isSuccess = repository.deleteCitizen(citizen)
+            withContext(Dispatchers.Main) {
+                onResult(isSuccess)
             }
-            callback(citizen)
         }
+    }
+
+    fun searchCitizens(query: String): LiveData<List<Citizens>> {
+        return repository.searchCitizens(query)
     }
 }

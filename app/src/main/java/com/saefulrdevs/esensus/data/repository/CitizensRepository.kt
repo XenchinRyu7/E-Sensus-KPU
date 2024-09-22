@@ -39,8 +39,7 @@ class CitizensRepository @Inject constructor(private val citizensDao: CitizensDa
         return citizensDao.getAllCitizens()
     }
 
-    suspend fun getCitizenById(nik: String): Citizens {
-        return citizensDao.getCitizenById(nik)
+    fun searchCitizens(query: String): LiveData<List<Citizens>> {
+        return citizensDao.searchCitizens("%$query%")
     }
-
 }

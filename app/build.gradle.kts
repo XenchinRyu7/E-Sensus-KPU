@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.cronet.embedded)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -76,4 +77,9 @@ dependencies {
     implementation(libs.dagger.hilt)
     ksp(libs.dagger.hilt.android.compiler)
     ksp(libs.dagger.hilt.compiler)
+
+    // open map
+    implementation(libs.osmdroid.android)
+    implementation (libs.osmbonuspack)
+    implementation (libs.play.services.location)
 }

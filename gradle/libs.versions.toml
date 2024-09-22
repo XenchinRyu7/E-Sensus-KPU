@@ -12,11 +12,15 @@ constraintlayout = "2.1.4"
 coreSplashscreen = "1.0.1"
 navigationFragmentKtx = "2.8.1"
 kotlinxCoroutinesAndroid = "1.7.3"
+osmbonuspack = "6.9.0"
+osmdroidAndroid = "6.1.20"
+playServicesLocation = "21.3.0"
 roomKtx = "2.6.1"
 ksp = "2.0.20-1.0.24"
 hilt = "2.51.1"
 hilt-compiler = "1.2.0"
 roomRuntime = "2.6.1"
+cronetEmbedded = "119.6045.31"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -37,6 +41,10 @@ dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compil
 dagger-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hilt-compiler" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomKtx" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+osmbonuspack = { module = "com.github.MKergall:osmbonuspack", version.ref = "osmbonuspack" }
+osmdroid-android = { module = "org.osmdroid:osmdroid-android", version.ref = "osmdroidAndroid" }
+play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
+cronet-embedded = { group = "org.chromium.net", name = "cronet-embedded", version.ref = "cronetEmbedded" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
